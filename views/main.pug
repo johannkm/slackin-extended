@@ -47,7 +47,9 @@ html(lang='en', class=`${large ? 'large' : ''}${iframe ? 'iframe' : ''} theme-${
         p.status #[strong.active= active] users online now of #[strong.total= total] registered.
       else
         p.status #[strong.total= total] users are registered so far.
-
+      
+      p Enter your company email:
+      
       form#invite
 
         if channels
@@ -59,9 +61,9 @@ html(lang='en', class=`${large ? 'large' : ''}${iframe ? 'iframe' : ''} theme-${
             input(type='hidden', name='channel', value=channels[0])
 
         if iframe
-          input.form-item(type='email', name='email', placeholder='you@yourdomain.com', required)
+          input.form-item(type='email', name='email', placeholder='you@company.com', required)
         else
-          input.form-item(type='email', name='email', placeholder='you@yourdomain.com', autofocus, required)
+          input.form-item(type='email', name='email', placeholder='you@company.com', autofocus, required)
 
         if recaptcha.sitekey
           if recaptcha.invisible
